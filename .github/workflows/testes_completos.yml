@@ -1,0 +1,53 @@
+name: Android CI com Testes Completos
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  unit-tests:
+    name: Testes Unitários
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Configurar Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Permitir execução do gradlew
+        run: chmod +x ./gradlew
+
+      - name: Rodar testes unitários
+        run: ./gradlew test
+
+  instrumentation-tests:
+    name: Testes Instrumentados (Interface)
+    runs-on: macos-latest  # Necessário para executar emulador Android
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Configurar Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Instalar dependências do Android
+        run: |
+          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "system-images;android-30;google_apis;x86"
+          echo "no" | avdmanager create avd -n test -k "system-images;android-30;google_apis;x86" --device "pixel"
+          $ANDROID_HOME/emulator/emulator -avd test -no-audio -no-window -gpu off &
+          adb wait-for-device
+          adb shell input keyevent 82
+
+      - name: Rodar testes instrumentados
+        run: ./gradlew connectedAndroidTest
