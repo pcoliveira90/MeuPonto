@@ -41,7 +41,16 @@
             android:text="Registrar Ponto"
             android:backgroundTint="#1565C0"
             android:textColor="@android:color/white"
-            android:paddingVertical="12dp"/>
+            android:paddingVertical="12dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Área onde os registros serão adicionados dinamicamente -->
+        <LinearLayout
+            android:id="@+id/lista_registros_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp" />
 
     </LinearLayout>
 </ScrollView>
