@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="#E3F2FD">
+    android:background="?android:attr/colorBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,13 +34,11 @@
             android:text="Longitude: --"
             android:layout_marginBottom="16dp"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_registrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Registrar Ponto"
-            android:backgroundTint="#1565C0"
-            android:textColor="@android:color/white"
             android:paddingVertical="12dp"
             android:layout_marginBottom="24dp" />
 
