@@ -4,10 +4,9 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.pcoliveira.meuponto.data.Registro
 import com.pcoliveira.meuponto.data.RegistroDatabase
+import com.pcoliveira.meuponto.model.Registro
 import kotlinx.coroutines.launch
-import kotlin.collections.List
 
 class RegistroViewModel(application: Application) : AndroidViewModel(application) {
     private val dao = RegistroDatabase.getDatabase(application).registroDao()

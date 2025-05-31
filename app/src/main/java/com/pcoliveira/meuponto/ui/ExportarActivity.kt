@@ -7,23 +7,22 @@ import android.graphics.pdf.PdfDocument
 import android.os.Bundle
 import android.os.Environment
 import android.widget.ArrayAdapter
-import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.material.button.MaterialButton
 import com.pcoliveira.meuponto.R
-import com.pcoliveira.meuponto.databinding.ActivityExportarBinding
-import com.pcoliveira.meuponto.data.AjustePonto
-import com.pcoliveira.meuponto.data.Registro
 import com.pcoliveira.meuponto.data.RegistroDatabase
+import com.pcoliveira.meuponto.databinding.ActivityExportarBinding
+import com.pcoliveira.meuponto.model.AjustePonto
+import com.pcoliveira.meuponto.model.Registro
 import com.pcoliveira.meuponto.viewmodel.RegistroViewModel
 import java.io.File
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
+import java.util.Locale
 
 class ExportarActivity : AppCompatActivity() {
     private lateinit var viewModel: RegistroViewModel

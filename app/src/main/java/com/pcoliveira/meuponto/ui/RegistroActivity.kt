@@ -1,18 +1,18 @@
 package com.pcoliveira.meuponto.ui
 
 import android.Manifest
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
 import android.view.View
-import android.widget.*
+import android.widget.ProgressBar
+import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.button.MaterialButton
@@ -20,7 +20,8 @@ import com.pcoliveira.meuponto.R
 import com.pcoliveira.meuponto.adapter.RegistroAdapter
 import com.pcoliveira.meuponto.viewmodel.RegistroViewModel
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
+import java.util.Locale
 
 class RegistroActivity : AppCompatActivity() {
     private lateinit var viewModel: RegistroViewModel
@@ -46,7 +47,7 @@ class RegistroActivity : AppCompatActivity() {
         textLongitude = findViewById(R.id.text_longitude)
         progressBar = findViewById(R.id.pbRegistrando)
 
-        registroAdapter = RegistroAdapter(emptyList())
+  registroAdapter = RegistroAdapter(emptyList()) { /* onAjustarClick não implementado */ }
         recyclerViewRegistros = findViewById(R.id.lista_registros_layout)
         recyclerViewRegistros.adapter = registroAdapter
         recyclerViewRegistros.layoutManager = LinearLayoutManager(this)
@@ -87,7 +88,7 @@ class RegistroActivity : AppCompatActivity() {
         }
 
         viewModel.todosRegistros().observe(this) { registros ->
-            registroAdapter.updateData(registros ?: emptyList())
+            registroAdapter.updateList(registros ?: emptyList())
         }
     }
 

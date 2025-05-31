@@ -6,7 +6,6 @@
     android:background="?android:attr/colorBackground">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -20,7 +19,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="0dp"/>
+            android:layout_marginTop="0dp" />
 
         <TextView
             android:id="@+id/text_latitude"
@@ -31,7 +30,7 @@
             app:layout_constraintTop_toBottomOf="@id/text_hora_atual"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp" />
 
         <TextView
             android:id="@+id/text_longitude"
@@ -42,7 +41,7 @@
             app:layout_constraintTop_toBottomOf="@id/text_latitude"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp" />
 
         <ProgressBar
             android:id="@+id/pbRegistrando"
@@ -52,7 +51,7 @@
             app:layout_constraintTop_toBottomOf="@id/text_longitude"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_registrar"
@@ -64,19 +63,21 @@
             app:layout_constraintTop_toBottomOf="@id/pbRegistrando"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/lista_registros_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:clipToPadding="false"
             android:paddingTop="16dp"
+            android:paddingBottom="32dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@id/button_registrar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="24dp"/>
+            android:layout_marginTop="24dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
