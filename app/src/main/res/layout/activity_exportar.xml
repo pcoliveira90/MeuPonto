@@ -15,8 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Exportar Relatórios"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -27,13 +26,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Selecione o período:"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
             app:layout_constraintTop_toBottomOf="@id/tvExportTitle"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="24dp"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilStartDate"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Data Inicial"
@@ -47,13 +47,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:focusable="false"
-                android:inputType="date"/>
+                android:inputType="date"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilEndDate"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Data Final"
@@ -67,12 +68,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:focusable="false"
-                android:inputType="date"/>
+                android:inputType="date"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnExportPdf"
+            style="@style/Widget.Material3.Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Exportar PDF"
@@ -83,6 +86,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnExportCsv"
+            style="@style/Widget.Material3.Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Exportar CSV"

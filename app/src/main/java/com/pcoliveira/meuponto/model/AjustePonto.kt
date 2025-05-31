@@ -1,4 +1,5 @@
-package com.pcoliveira.meuponto.data
+package com.pcoliveira.meuponto.model
+
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 

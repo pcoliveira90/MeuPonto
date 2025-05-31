@@ -1,7 +1,10 @@
 package com.pcoliveira.meuponto.data
 
 import androidx.lifecycle.LiveData
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
+import com.pcoliveira.meuponto.model.AjustePonto
 
 @Dao
 interface AjustePontoDao {
