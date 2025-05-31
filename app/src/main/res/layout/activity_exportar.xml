@@ -1,73 +1,79 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="24dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/tvExportTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Exportar Relatórios"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"/>
+    <data>
+        <!-- Pode adicionar ViewModel futuramente -->
+    </data>
 
-    <TextView
-        android:id="@+id/tvSelectDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Selecione o período:"
-        app:layout_constraintTop_toBottomOf="@id/tvExportTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="24dp"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp">
 
-    <EditText
-        android:id="@+id/etStartDate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Data Inicial"
-        android:focusable="false"
-        android:inputType="date"
-        app:layout_constraintTop_toBottomOf="@id/tvSelectDate"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
+        <TextView
+            android:id="@+id/tvExportTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exportar Relatórios"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"/>
 
-    <EditText
-        android:id="@+id/etEndDate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Data Final"
-        android:focusable="false"
-        android:inputType="date"
-        app:layout_constraintTop_toBottomOf="@id/etStartDate"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
+        <TextView
+            android:id="@+id/tvSelectDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selecione o período:"
+            app:layout_constraintTop_toBottomOf="@id/tvExportTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="24dp"/>
 
-    <Button
-        android:id="@+id/btnExportPdf"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Exportar PDF"
-        app:layout_constraintTop_toBottomOf="@id/etEndDate"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"/>
+        <EditText
+            android:id="@+id/etStartDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Data Inicial"
+            android:focusable="false"
+            android:inputType="date"
+            app:layout_constraintTop_toBottomOf="@id/tvSelectDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
 
-    <Button
-        android:id="@+id/btnExportCsv"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Exportar CSV"
-        app:layout_constraintTop_toBottomOf="@id/btnExportPdf"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
+        <EditText
+            android:id="@+id/etEndDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Data Final"
+            android:focusable="false"
+            android:inputType="date"
+            app:layout_constraintTop_toBottomOf="@id/etStartDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btnExportPdf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Exportar PDF"
+            app:layout_constraintTop_toBottomOf="@id/etEndDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"/>
+
+        <Button
+            android:id="@+id/btnExportCsv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Exportar CSV"
+            app:layout_constraintTop_toBottomOf="@id/btnExportPdf"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
