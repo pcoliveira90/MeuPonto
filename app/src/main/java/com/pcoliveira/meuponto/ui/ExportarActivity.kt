@@ -7,12 +7,12 @@ import android.graphics.pdf.PdfDocument
 import android.os.Bundle
 import android.os.Environment
 import android.widget.ArrayAdapter
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.button.MaterialButton
 import com.pcoliveira.meuponto.R
 import com.pcoliveira.meuponto.data.AjustePonto
 import com.pcoliveira.meuponto.data.Registro
@@ -27,8 +27,8 @@ class ExportarActivity : AppCompatActivity() {
     private lateinit var viewModel: RegistroViewModel
     private lateinit var spinnerTipo: Spinner
     private lateinit var textView: TextView
-    private lateinit var buttonPdf: Button
-    private lateinit var buttonCsv: Button
+    private lateinit var buttonPdf: MaterialButton
+    private lateinit var buttonCsv: MaterialButton
 
     private val dateFormat = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
 

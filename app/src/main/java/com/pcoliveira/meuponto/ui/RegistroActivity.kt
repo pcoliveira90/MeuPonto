@@ -12,6 +12,7 @@ import androidx.core.app.ActivityCompat
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.google.android.material.button.MaterialButton
 import com.pcoliveira.meuponto.R
 import com.pcoliveira.meuponto.viewmodel.RegistroViewModel
 import java.text.SimpleDateFormat
@@ -33,7 +34,7 @@ class RegistroActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this)[RegistroViewModel::class.java]
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
-        val button = findViewById<Button>(R.id.button_registrar)
+        val button = findViewById<MaterialButton>(R.id.button_registrar)
         textHoraAtual = findViewById(R.id.text_hora_atual)
         textLatitude = findViewById(R.id.text_latitude)
         textLongitude = findViewById(R.id.text_longitude)

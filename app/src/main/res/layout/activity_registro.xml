@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="#E3F2FD">
+    android:background="?android:attr/colorBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,8 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hora atual: --:--:--"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
             android:layout_marginBottom="16dp"/>
 
         <TextView
@@ -25,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Latitude: --"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
             android:layout_marginBottom="8dp"/>
 
         <TextView
@@ -32,15 +32,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Longitude: --"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
             android:layout_marginBottom="16dp"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button_registrar"
+            style="@style/Widget.Material3.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Registrar Ponto"
-            android:backgroundTint="#1565C0"
-            android:textColor="@android:color/white"
             android:paddingVertical="12dp"
             android:layout_marginBottom="24dp" />
 
