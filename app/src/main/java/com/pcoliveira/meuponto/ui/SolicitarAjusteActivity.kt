@@ -2,12 +2,12 @@ package com.pcoliveira.meuponto.ui
 
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.location.LocationServices
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.textfield.TextInputEditText
 import com.pcoliveira.meuponto.R
 import com.pcoliveira.meuponto.viewmodel.AjusteViewModel
 
@@ -23,8 +23,8 @@ class SolicitarAjusteActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this)[AjusteViewModel::class.java]
         val registroId = intent.getIntExtra("registroId", -1)
 
-        val motivoEditText = findViewById<EditText>(R.id.etMotivo)
-        val btnSalvar = findViewById<Button>(R.id.btnEnviar)
+        val motivoEditText = findViewById<TextInputEditText>(R.id.etMotivo)
+        val btnSalvar = findViewById<MaterialButton>(R.id.btnEnviar)
 
         btnSalvar.setOnClickListener {
             val motivo = motivoEditText.text.toString()
