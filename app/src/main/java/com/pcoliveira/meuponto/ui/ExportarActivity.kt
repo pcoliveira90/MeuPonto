@@ -11,9 +11,11 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.button.MaterialButton
 import com.pcoliveira.meuponto.R
+import com.pcoliveira.meuponto.databinding.ActivityExportarBinding
 import com.pcoliveira.meuponto.data.AjustePonto
 import com.pcoliveira.meuponto.data.Registro
 import com.pcoliveira.meuponto.data.RegistroDatabase
@@ -27,21 +29,18 @@ class ExportarActivity : AppCompatActivity() {
     private lateinit var viewModel: RegistroViewModel
     private lateinit var spinnerTipo: Spinner
     private lateinit var textView: TextView
-    private lateinit var buttonPdf: MaterialButton
-    private lateinit var buttonCsv: MaterialButton
+    private lateinit var binding: ActivityExportarBinding
 
     private val dateFormat = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_exportar)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_exportar)
 
         viewModel = ViewModelProvider(this)[RegistroViewModel::class.java]
 
         spinnerTipo = Spinner(this)
         textView = TextView(this)
-        buttonPdf = findViewById(R.id.btnExportPdf)
-        buttonCsv = findViewById(R.id.btnExportCsv)
 
         val tipos = listOf("Relatório Completo", "Relatório Simples")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, tipos)
@@ -52,11 +51,11 @@ class ExportarActivity : AppCompatActivity() {
         dao.registroDao().listar().observe(this) { registros ->
             dao.ajustePontoDao().listarTodos().observe(this) { ajustes ->
 
-                buttonPdf.setOnClickListener {
+                binding.btnExportPdf.setOnClickListener {
                     gerarPdfProfissional(registros, ajustes)
                 }
 
-                buttonCsv.setOnClickListener {
+                binding.btnExportCsv.setOnClickListener {
                     gerarCsv(registros, ajustes)
                 }
             }
