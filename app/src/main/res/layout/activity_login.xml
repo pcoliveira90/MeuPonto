@@ -26,6 +26,7 @@
                 android:id="@+id/etUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/texto_escuro"
                 android:hint="Usuário"
                 android:inputType="text"
                 android:text="@={viewModel.username}"
@@ -47,6 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Senha"
+                android:textColor="@color/texto_escuro"
                 android:inputType="textPassword"
                 android:text="@={viewModel.password}"
                 android:textAppearance="@style/TextAppearance.Material3.BodyLarge" />
