@@ -3,8 +3,8 @@ package com.pcoliveira.meuponto.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.smartponto.data.AjustePonto
-import com.example.smartponto.data.RegistroDatabase
+import com.pcoliveira.meuponto.data.AjustePonto
+import com.pcoliveira.meuponto.data.RegistroDatabase
 import kotlinx.coroutines.launch
 
 class AjusteViewModel(application: Application) : AndroidViewModel(application) {
