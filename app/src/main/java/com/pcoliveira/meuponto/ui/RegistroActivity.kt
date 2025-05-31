@@ -13,6 +13,10 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
+import com.pcoliveira.meuponto.R
+import com.pcoliveira.meuponto.viewmodel.RegistroViewModel
 
 class RegistroActivity : AppCompatActivity() {
     private lateinit var viewModel: RegistroViewModel
